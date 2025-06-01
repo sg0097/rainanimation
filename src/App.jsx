@@ -3,12 +3,12 @@ import './App.css';
 
 const GRID_ROWS = 15;
 const GRID_COLS = 20;
-const DROP_LENGTH = 5;
-const OPACITIES = [1, 0.8, 0.6, 0.4, 0.2, 0.1]; // Opacity levels for the raindrop effect
-const MIN_DROPS = 10;
+const DROP_LENGTH = 6;
+const OPACITIES = [0.1, 0.2, 0.4, 0.6, 0.8, 1]; // Opacity levels for the raindrop effect
+const MIN_DROPS = 12;
 const DROP_INTERVAL = 100;// ms
-const FALL_INTERVAL = 2500; // ms
-const COLOR_CHANGE_INTERVAL = 750; // ms
+const FALL_INTERVAL = 75; // ms
+const COLOR_CHANGE_INTERVAL = 1500; // ms
 
 // 🎨 Predefined bright color palette
 const COLOR_PALETTE = [
@@ -29,7 +29,7 @@ const getColorFromPalette = () => {
 const generateDrop = (col) => ({
   id: Math.random(),
   col: col ?? Math.floor(Math.random() * GRID_COLS),
-  row: 0
+  row: -2
 });
 
 const App = () => {
